@@ -17,20 +17,24 @@ and returns the substring within that range.
   a single operation (a function that takes a string and
      returns a modified string). Apply this operation only to 
      the substring within the given range, and return the 
-     modified string.*/
+     modified string.
 
 
      function modifyThis(strings, range,operation){
-        let subString= (strings.substring(range[0], range[1]+1));
+        let subStrings= (strings.substring(range[0], range[1]+1));
 
         let modifiedString= operation(subStrings);
 
-        return 
+        return strings.substring(0, range[0]) + modifiedString + strings.substring(range[1]);
+    }
 
-     }
 let strings="I dont really understand what the question is asking";
 let range=[0,20];
-let operation= fucnction(text)
+let operation= function(text){
+    return text.toUpperCase();
+}
+
+console.log(modifyThis(strings, range, operation)); */
 
 //#3
 /*Problem: Write a function that takes a string and an array 
